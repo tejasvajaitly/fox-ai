@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
-function Page({ children }: { children: React.ReactNode }) {
+function Page() {
   const { user } = useUser();
   const router = useRouter();
 
