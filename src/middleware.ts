@@ -10,14 +10,14 @@ export default clerkMiddleware((auth, req: NextRequest) => {
 
   // For users vistiting /onboarding & have onboardingComplete: true in their publicMetadata
   // Redirect them to the /dashboard route
-  if (
-    userId &&
-    isOnboardingRoute(req) &&
-    sessionClaims?.metadata?.onboardingComplete
-  ) {
-    const dashboardUrl = new URL("/dashboard", req.url);
-    return NextResponse.redirect(dashboardUrl);
-  }
+  // if (
+  //   userId &&
+  //   isOnboardingRoute(req) &&
+  //   sessionClaims?.metadata?.onboardingComplete
+  // ) {
+  //   const dashboardUrl = new URL("/dashboard", req.url);
+  //   return NextResponse.redirect(dashboardUrl);
+  // }
 
   // For users visiting /onboarding, don't try to redirect
   if (userId && isOnboardingRoute(req)) {
