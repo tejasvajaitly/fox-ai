@@ -16,8 +16,11 @@ export async function POST(request: Request) {
     return Response.json({ data: "Experience saved successfully" });
   } catch (err) {
     console.log("Error", err);
-    return Response.json({
-      error: "There was an error saving the experience.",
-    });
+    return Response.json(
+      {
+        error: "There was an error saving the experience.",
+      },
+      { status: 400 }
+    );
   }
 }
